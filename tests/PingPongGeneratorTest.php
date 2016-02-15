@@ -3,6 +3,32 @@
 
   class PingPongGeneratorTest extends PHPUnit_Framework_TestCase
   {
+      function test_checkPingPong_false()
+      {
+        //   Arrange
+        $test_PingPongGenerator = new PingPongGenerator;
+        $input = 4;
+
+        // Act
+        $result = $test_PingPongGenerator->generatePingPongArray($input);
+
+        // Assert
+        $this->assertEquals([1,2,'ping',4], $result);
+      }
+
+      function test_checkForArray()
+      {
+        //   Arrange
+        $test_PingPongGenerator = new PingPongGenerator;
+        $input = 4;
+
+        // Act
+        $result = $test_PingPongGenerator->generatePingPongArray($input);
+
+        // Assert
+        $this->assertEquals(array(1,2,'ping',4), $result);
+      }
+
       function test_checkPing_true()
       {
           // arrange
@@ -13,20 +39,20 @@
           $result = $test_PingPongGenerator->generatePingPongArray($input);
 
           // Assert
-          $this->assertEquals('ping', $result);
+          $this->assertEquals(array(1,2,'ping'), $result);
       }
 
       function test_checkPong_true()
       {
           // Arrange
           $test_PingPongGenerator = new PingPongGenerator;
-          $input = 10;
+          $input = 5;
 
           // Act
           $result = $test_PingPongGenerator->generatePingPongArray($input);
 
           // Assert
-          $this->assertEquals('pong', $result);
+          $this->assertEquals(array(1,2,'ping',4,'pong'), $result);
       }
 
       function test_checkPingPong_true()
@@ -39,21 +65,7 @@
           $result = $test_PingPongGenerator->generatePingPongArray($input);
 
           // Assert
-          $this->assertEquals('ping pong', $result);
+          $this->assertEquals(array(1,2,'ping',4,'pong','ping',7,8,'ping','pong',11,'ping',13,14,'ping pong'), $result);
       }
-
-      function test_checkPingPong_false()
-      {
-        //   Arrange
-        $test_PingPongGenerator = new PingPongGenerator;
-        $input = 13;
-
-        // Act
-        $result = $test_PingPongGenerator->generatePingPongArray($input);
-
-        // Asser
-        $this->assertEquals(13, $result);
-      }
-
   }
 ?>
