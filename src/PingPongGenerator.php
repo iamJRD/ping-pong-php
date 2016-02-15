@@ -9,7 +9,9 @@
               return 'ping';
             } elseif($input % 5 == 0) {
               return 'pong';
-            }
+          } else {
+              return $input;
+          }
         }
 
     }
