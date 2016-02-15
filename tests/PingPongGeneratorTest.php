@@ -29,5 +29,18 @@
           $this->assertEquals('pong', $result);
       }
 
+      function test_checkPingPong_true()
+      {
+          // Arrange
+          $test_PingPongGenerator = new PingPongGenerator;
+          $input = 15;
+
+          // Act
+          $result = $test_PingPongGenerator->generatePingPongArray($input);
+
+          // Assert
+          $this->assertEquals('ping pong', $result);
+      }
+
   }
 ?>
